@@ -1,13 +1,84 @@
-body {
+:root {
+  --primary: #d81e5b;
+  --secondary: #8c38ff;
+  --dark: #131a26;
+  --light: #eee;
+}
+
+
+*{
   margin: 0;
+  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+}
+
+.App{
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+body {
+  background-color: var(--light);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.button-grid {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4,100px);
+  grid-template-rows: minmax(80px, auto) repeat(5,80px);
+}
+
+.button-grid > button {
+  cursor: pointer;
+  font-size: 3rem;
+  border: 2px solid white;
+  outline: none;
+  background-color: rgba(255,255,255,.75);
+}
+
+.wide-button {
+  grid-column: 1 /  span 4;
+}
+
+.App-header {
+  width: 100%;
+  max-width: 400px;
+  background-color: #FFF;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0px 2px 64px rgba(0,0,0,0.2);
+}
+
+.Display {
+  display: flex;
+  flex-direction: column;
+  padding:16px;
+  text-align: right;
+  background-color: var(--dark);
+  color:var(--light);
+  font-size: 24px;
+}
+
+.Display > p {
+  margin-right: 90%;
+  font-size: 64px;
+}
+
+.clear-button {
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 7px;
 }
